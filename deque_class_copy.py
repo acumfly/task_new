@@ -34,19 +34,19 @@ class Deque:
             self.head = self.head.next
 
     def pop_head(self):
-        self.counter = self.counter-1
         if self.head is None:
             return None
         else:
+            self.counter-=1
             sv = self.head.value
             self.head = self.head.next
             return sv
 
     def pop_tail(self):
-        self.counter = self.counter-1
         if self.tail is None:
             return None
         else:
+            self.counter-=1
             sv = self.tail.value
             self.tail = self.tail.prev
             self.tail.next = None

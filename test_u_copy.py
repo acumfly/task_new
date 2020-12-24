@@ -1,5 +1,5 @@
 import unittest
-from deque_class import Deque
+from deque_class_copy import Deque
 
 
 class Test_cases(unittest.TestCase):
@@ -36,6 +36,12 @@ class Test_cases(unittest.TestCase):
         deque.push_head(1)
         deque.push_tail(2)
         deque.clear()
+        self.assertEqual(deque.size(), 0)
+    
+    def test_empty(self):
+        deque=Deque()
+        self.assertEqual(deque.pop_head(), None)
+        self.assertEqual(deque.pop_tail(), None)
         self.assertEqual(deque.size(), 0)
 
 if __name__ == "__name__":
