@@ -6,12 +6,9 @@ class Test_cases(unittest.TestCase):
 
     def test_pop_push_tail(self):
         deque = Deque()
-        deque.push_tail("Hello")
-        deque.push_tail(1)
-        deque.push_tail(2)
-        deque.push_head(0)
-        deque.push_head(10)
-        self.assertEqual(deque.pop_tail(), 2)
+        self.assertEqual(deque.pop_tail(), None)
+        deque.push_tail(9)
+        self.assertEqual(deque.pop_tail(), 9)
 
     def test_size(self):
         deque = Deque()
@@ -20,15 +17,13 @@ class Test_cases(unittest.TestCase):
         deque.push_tail(2)
         deque.push_head(0)
         deque.push_head(10)
-        deque.size()
         self.assertEqual(deque.size(), 5)
 
     def test_pop_push_head(self):
         deque = Deque()
+        self.assertEqual(deque.pop_head(), None)
         deque.push_head(34)
-        deque.push_head(1)
-        deque.push_tail(2)
-        self.assertEqual(deque.pop_head(), 1)
+        self.assertEqual(deque.pop_head(), 34)
 
     def test_clear(self):
         deque = Deque()
@@ -37,9 +32,9 @@ class Test_cases(unittest.TestCase):
         deque.push_tail(2)
         deque.clear()
         self.assertEqual(deque.size(), 0)
-    
+
     def test_empty(self):
-        deque=Deque()
+        deque = Deque()
         self.assertEqual(deque.pop_head(), None)
         self.assertEqual(deque.pop_tail(), None)
         self.assertEqual(deque.size(), 0)

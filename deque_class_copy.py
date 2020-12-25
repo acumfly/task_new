@@ -7,11 +7,11 @@ class Element():
 
 
 class Deque:
-    counter = 0
 
     def __init__(self):
         self.head = None
         self.tail = None
+        self.counter = 0
 
     def push_tail(self, value):
         self.counter += 1
@@ -37,7 +37,7 @@ class Deque:
         if self.head is None:
             return None
         else:
-            self.counter-=1
+            self.counter -= 1
             sv = self.head.value
             self.head = self.head.next
             return sv
@@ -46,10 +46,9 @@ class Deque:
         if self.tail is None:
             return None
         else:
-            self.counter-=1
+            self.counter -= 1
             sv = self.tail.value
             self.tail = self.tail.prev
-            self.tail.next = None
             return sv
 
     def size(self):
@@ -59,4 +58,3 @@ class Deque:
         self.head = None
         self.tail = None
         self.counter = 0
-        print("The deque is clear, check 'size()' method")
