@@ -39,5 +39,22 @@ class Test_cases(unittest.TestCase):
         self.assertEqual(deque.pop_tail(), None)
         self.assertEqual(deque.size(), 0)
 
+    def test_diff_pop(self):
+        deque = Deque()
+        deque.push_tail(10)
+        deque.push_tail(11)
+        deque.push_tail(12)
+        self.assertEqual(deque.pop_tail(), 12)
+        self.assertEqual(deque.pop_head(), 10)
+
+    def test_diff_push(self):
+        deque = Deque()
+        deque.push_head(1)
+        deque.push_head(2)
+        deque.push_tail(3)
+        deque.push_tail(4)
+        self.assertEqual(deque.pop_head(), 2)
+        self.assertEqual(deque.pop_tail(), 4)
+
 if __name__ == "__name__":
     unittest.main()
